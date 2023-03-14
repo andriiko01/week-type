@@ -11,6 +11,8 @@
   font-family: var(--font);
 
   background-color: var(--bg-color);
+
+  --coefficient: ((100vw - 20rem) / 50);
 }
 
 *,
@@ -46,20 +48,42 @@ p {
   text-shadow: 5px 5px var(--accent-dark);
 }
 
+#date {
+  /*width: 100%;*/
+  padding: 0.5em;
+  margin-bottom: 1rem;
+
+  font-size: 3.5rem;
+  color: var(--grey);
+
+  background-color: var(--neutral);
+  border-radius: 0.2em;
+
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
 @media (max-width: 70rem) {
+  /*? minSize + (maxSize - minSize) * ((100vw - minContainerSize) / (maxContainerSize - minContainerSize)) */
   h1,
   p {
-    /*? minSize + (maxSize - minSize) * ((100vw - minContainerSize) / (maxContainerSize - minContainerSize)) */
-    font-size: calc(3rem + 7 * ((100vw - 20rem) / 50));
+    /** from  10  to  2.5   */
+    font-size: calc(2.5rem + 7.5 * var(--coefficient));
   }
 
   h1 {
-    text-shadow: calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50))
-      calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50)) var(--neutral);
+    text-shadow: calc(0.15625rem + 0.15625 * var(--coefficient))
+      calc(0.15625rem + 0.15625 * var(--coefficient)) var(--neutral);
   }
 
   p {
-    text-shadow: calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50))
-      calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50)) var(--accent-dark);
+    text-shadow: calc(0.15625rem + 0.15625 * var(--coefficient))
+      calc(0.15625rem + 0.15625 * var(--coefficient)) var(--accent-dark);
+  }
+
+  #date {
+    /** from  3.5  to   1.25  */
+    font-size: calc(1.25rem + 2.25 * var(--coefficient));
   }
 }
