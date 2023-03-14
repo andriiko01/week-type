@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+:root {
+  --bg-color: #1a1a1d;
+  --grey: #cecece;
+  --neutral: #4e4e50;
+  --accent: #ea9010;
+  --accent-dark: #553201;
+  --font: 'Rubik', sans-serif;
+
+  line-height: 1.2;
+  font-family: var(--font);
+
+  background-color: var(--bg-color);
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0px 1rem;
+}
+
+h1,
+p {
+  font-size: 10rem;
+  font-weight: 500;
+}
+
+h1 {
+  color: var(--grey);
+  text-shadow: 5px 5px var(--neutral);
+}
+
+p {
+  color: var(--accent);
+  text-shadow: 5px 5px var(--accent-dark);
+}
+
+@media (max-width: 70rem) {
+  h1,
+  p {
+    /*? minSize + (maxSize - minSize) * ((100vw - minContainerSize) / (maxContainerSize - minContainerSize)) */
+    font-size: calc(3rem + 7 * ((100vw - 20rem) / 50));
+  }
+
+  h1 {
+    text-shadow: calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50))
+      calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50)) var(--neutral);
+  }
+
+  p {
+    text-shadow: calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50))
+      calc(0.15625rem + 0.15625 * ((100vw - 20rem) / 50)) var(--accent-dark);
+  }
+}
