@@ -42,12 +42,12 @@ function getWeeksSchedule(key) {
     case 'ЗТ':
       return 'Заліковий тиждень';
     case 'С':
-      return 'Сесія';
+      return 'Екзаменаційна сесія';
     case 'ВП':
       return 'Виробнича практика';
     case 'Т':
     default:
-      return 'Навчальний тиждень';
+      return 'Теоретичне навчання';
   }
 }
 
