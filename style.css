@@ -32,24 +32,23 @@ body {
   padding: 0px 1rem;
 }
 
-h1,
-p {
+.primary,
+.accent {
   font-size: 10rem;
   font-weight: 500;
 }
 
-h1 {
+.primary {
   color: var(--grey);
   text-shadow: 5px 5px var(--neutral);
 }
 
-p {
+.accent {
   color: var(--accent);
   text-shadow: 5px 5px var(--accent-dark);
 }
 
 #date {
-  /*width: 100%;*/
   padding: 0.5em;
   margin-bottom: 1rem;
 
@@ -66,18 +65,18 @@ p {
 
 @media (max-width: 70rem) {
   /*? minSize + (maxSize - minSize) * ((100vw - minContainerSize) / (maxContainerSize - minContainerSize)) */
-  h1,
-  p {
+  .primary,
+  .accent {
     /** from  10  to  2.5   */
     font-size: calc(2.5rem + 7.5 * var(--coefficient));
   }
 
-  h1 {
+  .primary {
     text-shadow: calc(0.15625rem + 0.15625 * var(--coefficient))
       calc(0.15625rem + 0.15625 * var(--coefficient)) var(--neutral);
   }
 
-  p {
+  .accent {
     text-shadow: calc(0.15625rem + 0.15625 * var(--coefficient))
       calc(0.15625rem + 0.15625 * var(--coefficient)) var(--accent-dark);
   }
